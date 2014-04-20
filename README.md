@@ -22,4 +22,4 @@ The dungeon is selected in dnd_map.rb, and the number is the level that you want
 
 [The Unofficial DND Home Page](http://www.digital-eel.com/files/dndpage_files/DND.htm)
 
-[Backtracking: DND (1984), Caverns of Zoarre (1984), and Heathkit DND (1985)](http://crpgaddict.blogspot.com/2011/12/earliest-cprgs.html)
+[Backtracking: DND (1984), Caverns of Zoarre (1984), and Heathkit DND (1985)](http://crpgaddict.blogspot.com/2010/07/backtracking-dnd-1984-caverns-of-zoarre.html)
