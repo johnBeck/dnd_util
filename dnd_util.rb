@@ -1,4 +1,4 @@
-require './dnd.rb'
+require './dnd/dnd.rb'
 
 
 module Dnd

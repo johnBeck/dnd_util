@@ -1,12 +1,12 @@
 require 'pp'
 
-require './dnd_map_util.rb'
-require './dnd_map_renderer.rb'
-require './dnd_map_tile.rb'
-require './dnd_player_util.rb'
-require './dnd_player.rb'
-require './dnd_buffer_2d.rb'
-require './dnd_stats_bucket.rb'
+require './dnd/dnd_map_util.rb'
+require './dnd/dnd_map_renderer.rb'
+require './dnd/dnd_map_tile.rb'
+require './dnd/dnd_player_util.rb'
+require './dnd/dnd_player.rb'
+require './dnd/dnd_buffer_2d.rb'
+require './dnd/dnd_stats_bucket.rb'
 
 module Dnd
 
@@ -18,7 +18,8 @@ module Dnd
   SHVENK_PATH =  'shvenk.bin'
   WARREN_PATH = 'warren.bin'
 
-  PLAYERS_PATH = 'PLAYERSx.DAT'
+  PLAYERS_PATH = 'PLAYERS.DAT'
+  PLAYERS_OUTPUT_PATH = 'PLAYERS.NEW'
   PLAYER_LENGTH = 128
 
   LEVEL_SIDE =     20

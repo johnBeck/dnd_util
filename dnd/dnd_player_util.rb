@@ -100,8 +100,6 @@ module Dnd
 
         modify_attribute(4, ATTRIBUTE_INFO[:level], 25)
 
-        modify_attribute(4, ATTRIBUTE_INFO[:spell_4], 25)
-
         modify_attribute(4, ATTRIBUTE_INFO[:shield], 72)
         modify_attribute(4, ATTRIBUTE_INFO[:cloak], 72)
         modify_attribute(4, ATTRIBUTE_INFO[:boots], 72)
@@ -239,7 +237,7 @@ module Dnd
     end
 
     def save_players
-      File.open(BASE_PATH + 'PLAYERS.DAT', 'w') do |file|
+      File.open(BASE_PATH + PLAYERS_OUTPUT_PATH, 'w') do |file|
         @players.dimensions[Dnd::Buffer2d::WIDTH_INDEX].times do |pi|
           file.write(@players.read_vert(pi, 0, PLAYER_LENGTH).map(&:ord).pack('C*'))
         end
