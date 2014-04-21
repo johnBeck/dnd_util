@@ -1,6 +1,10 @@
 module Dnd
   class Buffer2d
+    WIDTH_INDEX = 0
+    HEIGHT_INDEX = 1
+
     attr_accessor :buffer
+    attr_accessor :dimensions
 
     def initialize(width, height, default_value = nil)
       @dimensions = [width, height]
@@ -20,15 +24,23 @@ module Dnd
     end
 
     def index(x, y)
-      x + (y * @dimensions[0])
+      x + (y * @dimensions[WIDTH_INDEX])
     end
 
     def in_buffer?(x, y)
-      (x >= 0 && x < @dimensions[0]) && (y >= 0 && y < @dimensions[1])
+      in_dimension(x, WIDTH_INDEX) && in_dimension(y, HEIGHT_INDEX)
+    end
+
+    def in_dimension(value, dimension_index)
+      !!(value >= 0 && value < @dimensions[dimension_index])
+    end
+
+    def out_of_dimension(value, dimension_index)
+      !!(value < 0 || value >= @dimensions[dimension_index])
     end
 
     def buffer_size
-      @dimensions[0] * @dimensions[1]
+      @dimensions[WIDTH_INDEX] * @dimensions[HEIGHT_INDEX]
     end
 
     def write_string(x, y, value)
@@ -37,6 +49,43 @@ module Dnd
         put(x + i, y, value.chars[i])
       end
     end
+
+    def write_horiz(x, y, data)
+      data.size.times do |i|
+        put(x + i, y, data[i])
+      end
+    end
+
+    def write_vert(x, y, data)
+      data.size.times do |i|
+        put(x, y + i, data[i])
+      end
+    end
+
+    def read_horiz(x, y, size)
+      start_index = index(x, y)
+      @buffer[start_index..(start_index + size)]
+    end
+
+    def read_vert(x, y, size)
+      start_index = index(x, y)
+
+      [].tap do |bytes|
+        size.times do |i|
+          bytes << get(x, y + i)
+        end
+      end
+    end
+
+
+    def max(a, b)
+      a > b ? a : b
+    end
+
+    def min(a, b)
+      a < b ? a : b
+    end
+
 
   end
 end

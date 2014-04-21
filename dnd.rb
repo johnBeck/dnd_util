@@ -1,12 +1,26 @@
 require 'pp'
 
-require './dnd_util.rb'
+require './dnd_map_util.rb'
+require './dnd_map_renderer.rb'
 require './dnd_map_tile.rb'
+require './dnd_player_util.rb'
+require './dnd_player.rb'
 require './dnd_buffer_2d.rb'
-require './dnd_renderer.rb'
 require './dnd_stats_bucket.rb'
 
 module Dnd
+
+  BASE_PATH = 'c:\\dosbox\\dnd_12\\'
+
+  TELENGARD_PATH = 'telenard.bin'
+  CAVERN_PATH =  'cavern.bin'
+  LAMORTE_PATH = 'lamorte.bin'
+  SHVENK_PATH =  'shvenk.bin'
+  WARREN_PATH = 'warren.bin'
+
+  PLAYERS_PATH = 'PLAYERSx.DAT'
+  PLAYER_LENGTH = 128
+
   LEVEL_SIDE =     20
   DUNGEON_DEPTH =  20
   TILE_SIDE =      4
@@ -18,7 +32,7 @@ module Dnd
   TILE_BIT_MASK =       0xF0
 
   FLOOR_CHAR =        ' '
-  WALL_CHAR =         'I'
+  WALL_CHAR =         '#'
   DOOR_HORIZ_CHAR =   '-'
   DOOR_VERT_CHAR =    '|'
   SECRET_HORIZ_CHAR = '.'

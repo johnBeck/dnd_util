@@ -1,5 +1,5 @@
 module Dnd
-  class Renderer
+  class MapRenderer
 
     def initialize(map_buffer)
       @map_buffer = map_buffer
