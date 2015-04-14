@@ -1,6 +1,6 @@
 # Utility for DND
 
-I was recently taking a little trip down memory lane and discovered the first CRPG that I can recall playing. I had a great time with this as a kid and it even lead me to accidentally erase my entire computer once (maybe 5 year-olds shouldn't be given unfettered access to computers...good thing my dad was religious about backups)!
+I was recently taking a little trip down memory lane and discovered the first CRPG that I can recall playing. I had a great time with this as a kid and it even led me to accidentally erase my entire computer once (maybe 5 year-olds shouldn't be given unfettered access to computers...good thing my dad was religious about backups)!
 
 There's a pretty serious amount of content in this game and I have nowhere near the time or patience to actually try to get through it the 'right' way, so I decided to just cut to the the chase and find out exactly what this game has.
 
