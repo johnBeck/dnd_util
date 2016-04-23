@@ -1,9 +1,7 @@
 require './dnd/dnd.rb'
 
-
 module Dnd
   class Util
-
   end
 end
 

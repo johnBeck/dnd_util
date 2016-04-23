@@ -20,6 +20,5 @@ module Dnd
         end
       end
     end
-
   end
 end

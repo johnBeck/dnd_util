@@ -77,7 +77,6 @@ module Dnd
       end
     end
 
-
     def max(a, b)
       a > b ? a : b
     end
@@ -85,7 +84,5 @@ module Dnd
     def min(a, b)
       a < b ? a : b
     end
-
-
   end
 end

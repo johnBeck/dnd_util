@@ -9,7 +9,6 @@ require './dnd/dnd_buffer_2d.rb'
 require './dnd/dnd_stats_bucket.rb'
 
 module Dnd
-
   BASE_PATH = 'c:\\dosbox\\dnd_12\\'
 
   TELENGARD_PATH = 'telenard.bin'
@@ -66,5 +65,4 @@ module Dnd
     :'224' => 'TRV',
     :'240' => 'GNI'
   }
-
 end

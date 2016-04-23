@@ -1,6 +1,5 @@
 module Dnd
   class MapRenderer
-
     def initialize(map_buffer)
       @map_buffer = map_buffer
     end
@@ -11,7 +10,6 @@ module Dnd
     end
 
     private
-
       def rasterize_map
         @render_buffer = Buffer2d.new(RASTER_SIDE, RASTER_SIDE, FLOOR_CHAR)
         fill_in_far_edges
@@ -42,6 +40,5 @@ module Dnd
           puts if width < TERMINAL_WIDTH
         end
       end
-
   end
 end

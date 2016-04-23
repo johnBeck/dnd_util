@@ -1,6 +1,5 @@
 module Dnd
   class MapTile
-
     def self.draw(x, y, value, render_buffer)
       i = x * TILE_SIDE
       j = y * TILE_SIDE
@@ -11,7 +10,6 @@ module Dnd
     end
 
     private
-
       def self.draw_horizontal_wall(i, j, value, render_buffer)
         door_char = WALL_MAPPING[(value & HORIZONTAL_BIT_MASK).to_s.intern]
         return if door_char.nil?
@@ -36,6 +34,5 @@ module Dnd
         masked_value = value & TILE_BIT_MASK
         render_buffer.write_string(i + 1, j + 2, TILE_LOOKUP[masked_value.to_s.intern])
       end
-
   end
 end

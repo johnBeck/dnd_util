@@ -1,12 +1,10 @@
 module Dnd
   class PlayerUtil
-
     BYTE_LENGTH = 1
     WORD_LENGTH = 2
     DWORD_LENGTH = 4
 
     BLANK_TEXT_CHAR = 32.chr
-
 
     ATTRIBUTE_INFO = {
       name: { offset: 0, length: 16, type: :text },
@@ -76,10 +74,8 @@ module Dnd
     # SHIELD_OFFSET
 
 
-
     # CURRENT_HP = 45 # ???
     # MAX_HP = 47 # ???
-
 
 
     def initialize(path)
@@ -114,13 +110,11 @@ module Dnd
         modify_attribute(4, ATTRIBUTE_INFO[:dex], 32)
         modify_attribute(4, ATTRIBUTE_INFO[:cha], 32)
 
-
         compare
         print_by_attribute
 
         save_players
       end
-
     end
 
     def compare(player_indices = nil)
@@ -143,28 +137,21 @@ module Dnd
     end
 
     def print_by_attribute
-      ATTRIBUTE_INFO.each do |k, v|
-
-        attribute = ATTRIBUTE_INFO[k]
-        puts "\n #{k.to_s} ------\n\n"
-
+      ATTRIBUTE_INFO.each do |key, attribute|
+        puts "\n #{key.to_s} ------\n\n"
         values = interpret_attribute(attribute)
 
         if !values.empty?
           values[0].size.times do |i|
-            puts "#{values.map{ |v| v[i] }.join(' ')}"
+            puts "#{values.map{ |attribute| attribute[i] }.join(' ')}"
           end
         end
-
       end
     end
 
     def interpret_attribute(attribute)
-
       [].tap do |values|
-
         @players.dimensions[Buffer2d::WIDTH_INDEX].times do |pi|
-
           value = []
 
           case attribute[:type]
@@ -176,6 +163,7 @@ module Dnd
             attribute[:length].times do |i|
               value << "%-4d" % @players.get(pi, attribute[:offset] + i).ord
             end
+
           when :word
             value = []
             attribute[:length].times do |i|
@@ -202,11 +190,8 @@ module Dnd
               value << "%-12d" % dword
             end
           end
-
           values << value
-
         end
-
       end
     end
 
@@ -243,7 +228,5 @@ module Dnd
         end
       end
     end
-
   end
 end
-

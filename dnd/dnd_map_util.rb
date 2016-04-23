@@ -1,6 +1,5 @@
 module Dnd
   class MapUtil
-  
     def initialize(path)
       read_map_from_file(path)
     end
@@ -14,7 +13,6 @@ module Dnd
     end
 
     private
-
       def read_map_from_file(path)
         @map_buffers = []
         File.open(path, 'rb') do |file|
@@ -36,6 +34,5 @@ module Dnd
           end
         end
       end
-
   end
 end
